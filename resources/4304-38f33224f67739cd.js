@@ -311,6 +311,8 @@
           e.children.props.children.props.html = "12.13";
         }else if(e.nodeId == "uktBgjURUL"){
           e.children.props.style.marginTop = "300px";
+        }else if(e.nodeId == "X9yjGloHKo"){
+          return null;
         }else{
           //nothing
         }
@@ -40885,9 +40887,9 @@
               success: !0,
               messages: Array.from({ length: 5 }, function () {
                 return {
-                  senderName: a[Math.floor(Math.random() * a.length)],
-                  content: t[Math.floor(Math.random() * t.length)],
-                  createdAt: new Date().toISOString(),
+                  senderName: "",
+                  content: "",
+                  createdAt: "",
                 };
               }),
             }

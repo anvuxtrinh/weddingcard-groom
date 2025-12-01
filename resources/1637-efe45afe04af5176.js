@@ -993,27 +993,7 @@
               className: "jsx-3895218497",
               children: [
                 i.map(function (e, t) {
-                  return (0, d.jsx)(
-                    "div",
-                    {
-                      ref: function (e) {
-                        return (l.current[t] = e);
-                      },
-                      className: "jsx-3895218497 blessing-message",
-                      children: (0, d.jsxs)("span", {
-                        className: "jsx-3895218497 blessing-text",
-                        children: [
-                          (0, d.jsx)("strong", {
-                            className: "jsx-3895218497",
-                            children: e.senderName,
-                          }),
-                          ": ",
-                          e.content,
-                        ],
-                      }),
-                    },
-                    t,
-                  );
+                  return null;
                 }),
                 (0, d.jsx)(o(), {
                   id: "3895218497",
@@ -1366,20 +1346,6 @@
             id: "cinelove-toolbar",
             className: "jsx-1401461546",
             children: [
-              (0, d.jsxs)("div", {
-                className: "jsx-1401461546 toolbar",
-                children: [
-                  (0, d.jsx)(T, { showComments: r }),
-                  (0, d.jsx)(G, { showBottomToolbar: t, pageData: n }),
-                ],
-              }),
-              (0, d.jsx)(o(), {
-                id: "1401461546",
-                children: [
-                  "#cinelove-toolbar.jsx-1401461546{position:absolute;left:0;bottom:0;z-index:1000;width:100%;height:64px;box-sizing:border-box;}",
-                  "#cinelove-toolbar.jsx-1401461546 .toolbar.jsx-1401461546{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;position:relative;width:100%;height:100%;padding:0.5rem;}",
-                ],
-              }),
             ],
           });
         },
