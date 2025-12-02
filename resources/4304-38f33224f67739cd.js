@@ -296,9 +296,9 @@
         }else if(e.nodeId == "56VLaOplZK"){
           e.children.props.children.props.html = "2025.12.13";
         }else if(e.nodeId == "EqAsle3Atj"){
-          e.children.props.children.props.html = "Quốc Khánh";
-        }else if(e.nodeId == "8_Hm1R3U-7"){
           e.children.props.children.props.html = "Hương Trà";
+        }else if(e.nodeId == "8_Hm1R3U-7"){
+          e.children.props.children.props.html = "Quốc Khánh";
         }else if(e.nodeId == "lyas9w1eaF"){
           e.children.props.children.props.html = "2025.12.13";
         }else if(e.nodeId == "vqZ6IVuMYl"){
@@ -313,6 +313,10 @@
           e.children.props.style.marginTop = "300px";
         }else if(e.nodeId == "X9yjGloHKo"){
           return null;
+        }else if(e.nodeId == "xjpz8c91ml"){
+          e.children.props.children.props.html = "GROOM";
+        }else if(e.nodeId == "shHNZHWPKZ"){
+          e.children.props.children.props.html = "BRIDE";
         }else{
           //nothing
         }
