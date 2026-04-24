@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Modern Card</title>
+<style>
+:root{
+  --accent:#0d9488;--accent-light:#ccfbf1;--accent2:#0f766e;
+  --text:#1e293b;--text-light:#64748b;--border:#e2e8f0;--bg:#fff;
+  --card-bg:#f8fafc;--font:'Segoe UI','Helvetica Neue',Arial,sans-serif;
+  --timeline-line:#cbd5e1;--timeline-dot:var(--accent);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);font-size:9.5px;color:var(--text);background:#e2e8f0;line-height:1.5;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;min-height:297mm;margin:20px auto;background:var(--bg);box-shadow:0 4px 24px rgba(0,0,0,.08);padding:0;overflow:hidden}
+/* Header — gradient banner */
+header{background:linear-gradient(135deg,#0f172a,#134e4a);color:#fff;padding:30px 36px 24px;position:relative}
+header::after{content:'';position:absolute;bottom:-20px;left:0;right:0;height:40px;background:var(--bg);border-radius:50% 50% 0 0}
+header .name{font-size:26px;font-weight:800;letter-spacing:.5px}
+header .job-title{font-size:12px;color:#5eead4;margin-top:2px;letter-spacing:1.5px}
+header .contact{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:8.5px;margin-top:10px;color:#ccfbf1}
+header .contact a{color:#5eead4;text-decoration:none}
+.body-content{padding:12px 32px 24px;display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+.full-width{grid-column:1/-1}
+.section-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.section-title::after{content:'';flex:1;height:1px;background:var(--border)}
+section{margin-bottom:14px}
+.summary-text{color:var(--text-light);line-height:1.65;position:relative;z-index:1}
+/* Timeline for experience */
+.timeline-wrap{position:relative;padding-left:18px}
+.timeline-wrap::before{content:'';position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:var(--timeline-line)}
+/* Card-style entries */
+.card{background:var(--card-bg);border-radius:8px;padding:10px 12px;margin-bottom:8px;border-left:3px solid var(--accent);page-break-inside:avoid;position:relative}
+.card::before{content:'';position:absolute;left:-21px;top:12px;width:10px;height:10px;background:var(--timeline-dot);border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 2px var(--timeline-line);z-index:1}
+.card:last-child{margin-bottom:0}
+.card-header{display:flex;justify-content:space-between;align-items:baseline}
+.entry-role{font-weight:700;font-size:11px;color:var(--text)}
+.entry-company{font-weight:600;color:var(--accent);font-size:9.5px}
+.entry-date{font-size:8px;color:#fff;background:var(--accent);padding:1px 7px;border-radius:10px;white-space:nowrap;font-weight:600}
+.card ul{margin:3px 0 0 14px}
+.card li{margin-bottom:1.5px;color:var(--text-light);font-size:9px}
+.card li::marker{color:var(--accent)}
+.project-card{background:var(--card-bg);border-radius:8px;padding:10px 12px;margin-bottom:6px;border:1px solid var(--border)}
+.project-name{font-weight:700;font-size:10.5px;color:var(--accent)}
+.project-desc{color:var(--text-light);margin:2px 0}
+.project-tech{font-size:8.5px;color:var(--accent2);font-style:italic}
+/* Skills with level bars */
+.skill-group{margin-bottom:8px}
+.skill-group:last-child{margin-bottom:0}
+.skill-group-name{font-weight:700;font-size:9px;color:var(--accent);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
+.skill-item{display:flex;align-items:center;gap:6px;margin-bottom:3px}
+.skill-item:last-child{margin-bottom:0}
+.skill-label{font-size:8.5px;color:var(--text);width:80px;flex-shrink:0;font-weight:500}
+.skill-bar{flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden}
+.skill-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--accent),#2dd4bf);transition:width .3s}
+.edu-degree{font-weight:700;font-size:10.5px}
+.edu-school{color:var(--text-light)}
+.edu-date{font-size:8.5px;color:var(--text-light)}
+.edu-detail{font-size:8.5px;color:var(--text-light);font-style:italic}
+.cert-name{font-weight:600;font-size:8.5px}
+.cert-sub{font-size:8px;color:var(--text-light)}
+.lang-item{font-size:8.5px;color:var(--text-light);margin-bottom:2px}
+.lang-item strong{color:var(--text)}
+.side-section{margin-bottom:10px}
+.export-btn{position:fixed;bottom:24px;right:24px;background:var(--accent);color:#fff;border:none;padding:12px 24px;font-size:14px;font-weight:600;border-radius:8px;cursor:pointer;box-shadow:0 4px 14px rgba(13,148,136,.3);z-index:1000}
+.export-btn:hover{background:#0f766e}
+@media print{body{background:none}.page{margin:0;box-shadow:none;width:100%;min-height:297mm;page-break-after:always}.export-btn{display:none!important}@page{size:A4;margin:0}}
+</style>
+</head>
+<body>
+<div id="cv-root"><p style="text-align:center;padding:40px;color:#888">Loading…</p></div>
+<button class="export-btn" onclick="window.print()">Export to PDF</button>
+<script src="configure.js"></script>
+<script>
+function skillLevel(name){/* Default levels — customize per skill in configure.js via skills[].levels */return 75}
+function render(d){
+  const ct=d.contact.map(c=>c.href?`<span>${c.icon} <a href="${c.href}">${c.text}</a></span>`:`<span>${c.icon} ${c.text}</span>`).join("");
+  const exp=d.experience.map(e=>`<div class="card"><div class="card-header"><div><span class="entry-role">${e.role}</span> · <span class="entry-company">${e.company}</span></div><span class="entry-date">${e.date}</span></div><ul>${e.bullets.map(b=>`<li>${b}</li>`).join("")}</ul></div>`).join("");
+  const skills=d.skills.map(s=>`<div class="skill-group"><div class="skill-group-name">${s.group}</div>${s.items.map((item,idx)=>{
+    const lv=(s.levels&&s.levels[idx])?s.levels[idx]:skillLevel(item);
+    return`<div class="skill-item"><span class="skill-label">${item}</span><div class="skill-bar"><div class="skill-fill" style="width:${lv}%"></div></div></div>`}).join("")}</div>`).join("");
+  const proj=d.projects.map(p=>`<div class="project-card"><div class="project-name">${p.name}</div><div class="project-desc">${p.description}</div><div class="project-tech">${p.tech}</div></div>`).join("");
+  const edu=d.education.map(e=>`<div><div class="edu-degree">${e.degree}</div><div class="edu-school">${e.school}</div>${e.detail?`<div class="edu-detail">${e.detail}</div>`:""}<div class="edu-date">${e.date}</div></div>`).join("");
+  const certs=(d.certifications||[]).map(c=>`<div class="side-section"><div class="cert-name">${c.name}</div><div class="cert-sub">${c.issuer} — ${c.date}</div></div>`).join("");
+  const langs=(d.languages||[]).map(l=>`<div class="lang-item"><strong>${l.lang}</strong> — ${l.level}</div>`).join("");
+
+  document.getElementById("cv-root").innerHTML=`<div class="page">
+    <header><div class="name">${d.name}</div><div class="job-title">${d.title}</div><div class="contact">${ct}</div></header>
+    <div class="body-content">
+      <section class="full-width"><div class="section-title">Summary</div><div class="summary-text">${d.summary}</div></section>
+      <section class="full-width"><div class="section-title">Experience</div><div class="timeline-wrap">${exp}</div></section>
+      <section><div class="section-title">Skills</div>${skills}</section>
+      <section><div class="section-title">Projects</div>${proj}</section>
+      <section><div class="section-title">Education</div>${edu}</section>
+      <section>
+        ${certs?`<div class="section-title">Certifications</div>${certs}`:""}
+        ${langs?`<div class="section-title">Languages</div>${langs}`:""}
+      </section>
+    </div>
+  </div>`;
+}
+render(CV_DATA);
+</script>
+</body>
+</html>
