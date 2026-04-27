@@ -1,109 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CV — Bold Accent</title>
-<style>
-:root{
-  --accent:#0d9488;--accent-dark:#0f172a;--accent-light:#ccfbf1;
-  --accent2:#2dd4bf;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0;--bg:#fff;
-  --font:'Segoe UI','Helvetica Neue',Arial,sans-serif;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font);font-size:9.5px;color:var(--text);background:#e2e8f0;line-height:1.5;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.page{width:210mm;min-height:297mm;margin:20px auto;background:var(--bg);box-shadow:0 4px 24px rgba(0,0,0,.08);overflow:hidden}
-/* Big split header */
-header{display:grid;grid-template-columns:1fr auto;background:var(--accent-dark);color:#fff}
-.header-left{padding:28px 32px 24px;display:flex;flex-direction:column;justify-content:center}
-.header-left .name{font-size:28px;font-weight:900;letter-spacing:.5px}
-.header-left .job-title{font-size:13px;color:#5eead4;margin-top:3px;font-weight:300;letter-spacing:2px;text-transform:uppercase}
-.header-right{background:var(--accent);padding:20px 28px;display:flex;flex-direction:column;justify-content:center;gap:4px;min-width:220px}
-.header-right span{font-size:8.5px;color:#ccfbf1}
-.header-right a{color:#5eead4;text-decoration:none}
-.content{display:grid;grid-template-columns:1fr 220px;min-height:calc(297mm - 100px)}
-main{padding:20px 26px}
-aside{background:#f0fdfa;border-left:3px solid var(--accent);padding:20px 16px}
-.section-title{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:var(--accent-dark);margin-bottom:8px;padding-left:10px;border-left:3px solid var(--accent);line-height:1}
-aside .section-title{border-left:none;padding-left:0;color:var(--accent)}
-section{margin-bottom:16px}
-section:last-child{margin-bottom:0}
-.summary-text{color:var(--text-light);line-height:1.65;padding-left:10px;position:relative;z-index:1}
-/* Timeline */
-.timeline-wrap{position:relative;padding-left:18px}
-.timeline-wrap::before{content:'';position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:#cbd5e1}
-/* Entries with timeline dot */
-.entry{margin-bottom:10px;padding-left:10px;border-left:2px solid var(--accent-light);page-break-inside:avoid;position:relative}
-.entry::before{content:'';position:absolute;left:-20px;top:8px;width:10px;height:10px;background:var(--accent);border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 2px #cbd5e1;z-index:1}
-.entry:last-child{margin-bottom:0}
-.entry-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:2px}
-.entry-role{font-weight:800;font-size:11px;color:var(--text)}
-.entry-company{font-weight:600;color:var(--accent);font-size:10px}
-.entry-date{font-size:8px;color:#fff;background:var(--accent);padding:1px 8px;border-radius:3px;white-space:nowrap;font-weight:600}
-.entry ul{margin:2px 0 0 12px}
-.entry li{margin-bottom:1.5px;color:var(--text-light);font-size:9px}
-.entry li::marker{color:var(--accent)}
-/* Sidebar skills — level bars */
-.skill-group{margin-bottom:8px}
-.skill-group:last-child{margin-bottom:0}
-.skill-group-name{font-weight:700;font-size:9px;color:var(--accent);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
-.skill-item{display:flex;align-items:center;gap:4px;margin-bottom:3px}
-.skill-item:last-child{margin-bottom:0}
-.skill-label{font-size:8px;color:var(--text);width:68px;flex-shrink:0;font-weight:500}
-.skill-bar{flex:1;height:4px;background:var(--border);border-radius:2px;overflow:hidden}
-.skill-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
-.project-item{margin-bottom:8px;padding-left:10px;border-left:2px solid var(--accent-light)}
-.project-name{font-weight:800;font-size:10.5px;color:var(--accent-dark)}
-.project-desc{color:var(--text-light);margin:1px 0}
-.project-tech{font-size:8.5px;color:var(--accent);font-style:italic}
-.edu-degree{font-weight:700;font-size:10.5px}
-.edu-school{color:var(--text-light)}
-.edu-date{font-size:8.5px;color:var(--text-light)}
-.edu-detail{font-size:8.5px;color:var(--text-light);font-style:italic}
-.cert-item{margin-bottom:5px}
-.cert-name{font-weight:600;font-size:8.5px;color:var(--text)}
-.cert-sub{font-size:8px;color:var(--text-light)}
-.lang-item{font-size:8.5px;color:var(--text-light);margin-bottom:3px}
-.lang-item strong{color:var(--text)}
-.lang-bar{height:4px;background:#e2e8f0;border-radius:2px;margin-top:2px;overflow:hidden}
-.lang-fill{height:100%;background:var(--accent);border-radius:2px}
-.export-btn{position:fixed;bottom:24px;right:24px;background:var(--accent);color:#fff;border:none;padding:12px 24px;font-size:14px;font-weight:600;border-radius:8px;cursor:pointer;box-shadow:0 4px 14px rgba(13,148,136,.3);z-index:1000}
-.export-btn:hover{background:#0f766e}
-@media print{body{background:none}.page{margin:0;box-shadow:none;width:100%;min-height:297mm;page-break-after:always}.export-btn{display:none!important}@page{size:A4;margin:0}}
-</style>
-</head>
-<body>
-<div id="cv-root"><p style="text-align:center;padding:40px;color:#888">Loading…</p></div>
-<button class="export-btn" onclick="window.print()">Export to PDF</button>
-<script src="configure.js"></script>
-<script>
-function langPercent(level){const m={"Native":100,"Fluent":90,"Advanced":80,"Conversational":60,"Intermediate":50,"Basic":30};return m[level]||50}
-function render(d){
-  const ct=d.contact.map(c=>`<span>${c.icon} ${c.href?`<a href="${c.href}">${c.text}</a>`:c.text}</span>`).join("");
-  const exp=d.experience.map(e=>`<div class="entry"><div class="entry-top"><div><span class="entry-role">${e.role}</span><br><span class="entry-company">${e.company}</span></div><span class="entry-date">${e.date}</span></div><ul>${e.bullets.map(b=>`<li>${b}</li>`).join("")}</ul></div>`).join("");
-  const proj=d.projects.map(p=>`<div class="project-item"><div class="project-name">${p.name}</div><div class="project-desc">${p.description}</div><div class="project-tech">${p.tech}</div></div>`).join("");
-  const edu=d.education.map(e=>`<div><div class="edu-degree">${e.degree}</div><div class="edu-school">${e.school}</div>${e.detail?`<div class="edu-detail">${e.detail}</div>`:""}<div class="edu-date">${e.date}</div></div>`).join("");
-  const skills=d.skills.map(s=>`<div class="skill-group"><div class="skill-group-name">${s.group}</div>${s.items.map((item,idx)=>{const lv=(s.levels&&s.levels[idx])?s.levels[idx]:75;return`<div class="skill-item"><span class="skill-label">${item}</span><div class="skill-bar"><div class="skill-fill" style="width:${lv}%"></div></div></div>`}).join("")}</div>`).join("");
-  const certs=(d.certifications||[]).map(c=>`<div class="cert-item"><div class="cert-name">${c.name}</div><div class="cert-sub">${c.issuer} — ${c.date}</div></div>`).join("");
-  const langs=(d.languages||[]).map(l=>`<div class="lang-item"><strong>${l.lang}</strong> — ${l.level}<div class="lang-bar"><div class="lang-fill" style="width:${langPercent(l.level)}%"></div></div></div>`).join("");
-  document.getElementById("cv-root").innerHTML=`<div class="page">
-    <header><div class="header-left"><div class="name">${d.name}</div><div class="job-title">${d.title}</div></div><div class="header-right">${ct}</div></header>
-    <div class="content">
-      <main>
-        <section><div class="section-title">Summary</div><div class="summary-text">${d.summary}</div></section>
-        <section><div class="section-title">Experience</div><div class="timeline-wrap">${exp}</div></section>
-        <section><div class="section-title">Projects</div>${proj}</section>
-        <section><div class="section-title">Education</div>${edu}</section>
-      </main>
-      <aside>
-        <section><div class="section-title">Skills</div>${skills}</section>
-        ${certs?`<section><div class="section-title">Certifications</div>${certs}</section>`:""}
-        ${langs?`<section><div class="section-title">Languages</div>${langs}</section>`:""}
-      </aside>
-    </div>
-  </div>`;
-}
-render(CV_DATA);
-</script>
-</body>
-</html>
+// Shared CV data — edit this file to populate all themes
+const CV_DATA = {
+  name: "Trinh Quoc Khanh",
+  title: "Senior Software Engineer",
+  image: { src: "", alt: "Photo", position: "sidebar" },
+  contact: [
+    { icon: "📧", text: "trinhquockhanh20121999@gmail.com", href: "mailto:trinhquockhanh20121999@gmail.com" },
+    { icon: "📱", text: "+84 339 271 913" },
+    { icon: "🔗", text: "linkedin.com/in/khánh-trịnh-7b257a249", href: "https://www.linkedin.com/in/khánh-trịnh-7b257a249" },
+    { icon: "📍", text: "298 Dê La Thành, phường Văn Miếu" }
+  ],
+  summary: "Software Engineer with 5 years of experience in automotive and embedded systems. Skilled in C/C++ and Python, with good knowledge of algorithms, data structures, and Unix operating systems. Experienced in agile development and the Scrum framework, helping teams work together and finish tasks on time. Good communication skills, with experience working and discussing technical issues with Korean partners to solve problems and meet project goals.",
+  skills: [
+    { group: "Languages", items: ["C", "C++", "Python"], levels: [80, 80, 40] },
+    { group: "Algorithms", items: ["Sorting", "Searching", "DP", "Backtracking", "DFS-BFS"], levels: [80, 80, 60, 60, 60] },
+    { group: "Data Structures", items: ["Stack", "Queue", "Vector", "Tree", "Hash"], levels: [80, 80, 60, 60, 60] },
+    { group: "Tools & Platforms", items: ["Git", "Renode", "Vscode"], levels: [60, 20, 80] },
+    { group: "Operating Systems", items: ["Theory", "Linux", "RTOS"], levels: [60, 40, 20] },
+  ],
+  experience: [
+    {
+      role: "Research Engineer",
+      company: "LG Electronics Development Vietnam",
+      date: "Jan 2022 — Feb 2024",
+      bullets: [
+        "Develop the middleware application on Linux that built by Yocto:",
+        "• Hardware Manager collaborate with Windows application to test the device",
+        "• System Manager to monitor the CPU and memory usage of the device",
+        "• Task Manager to launch and manage the lifecycle of the application on the device",
+        "Document the design and implement unit tests for the middleware application to ensure its reliability and maintainability",
+        "• Implemented unit tests for the middleware application using Google Test framework, achieving 100% code coverage and improving the overall quality of the software",
+        "• Documented the test cases in the Software Design Document (SDD)",
+        "Develop tools to enhance the documentation and testing process of the middleware application:",
+        "• Developed a Python script to automate the generation of test cases based on the requirements specified in the Software Design Document (SDD), reducing the time required for test case creation by 50%",
+      ]
+    },
+    {
+      role: "Senior Engineer",
+      company: "LG Electronics Development Vietnam",
+      date: "Feb 2024 — Present",
+      bullets: [
+        "Built customer-facing dashboard with React and GraphQL serving 50K+ daily active users",
+      ]
+    },
+  ],
+  projects: [
+    { name: "Develop Middleware", description: "Open-source Kanban board with real-time collaboration, used by 2K+ teams", tech: "C++, Python, Linux" },
+    { name: "Embedded Solution", description: "Command-line tool for tracking developer productivity metrics across repositories", tech: "C/C++, Python, Typescript, Linux, RTOS, Windows" },
+  ],
+  education: [
+    { degree: "Automobile Engineering", school: "University of Transport and Communications", date: "2017 — 2021", detail: "GPA 3.8/4.0" }
+  ],
+  certifications: [
+    { name: "Software Professional", issuer: "LG Electronics Development Vietnam", date: "2023" },
+  ],
+  languages: [
+    { lang: "English", level: "Native" },
+  ],
+  layout: {
+    pages: [
+      {
+        sidebar: ["skills", "certifications", "languages"],
+        main: ["summary", "experience", "projects", "education"]
+      }
+    ]
+  }
+};
